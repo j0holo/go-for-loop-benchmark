@@ -60,7 +60,8 @@ benchmark. The weight array should be the most cache-friendly of all implementat
 
 The disassembled code `go tool compile -S inventory.go > inventory.s` has been included if somebody understands why
 the compiler and/or CPU is faster in OOP/AOS style. Maybe because the caches of my CPU are too large to notice
-the benefits of Data-Oriented programming.
+the benefits of Data-Oriented programming. Another option is that the access pattern is still predictable so the 
+memory prefetch hides the issue that OOP and AOS style does not fit into the L1 cache.
 
 OOP and AOS have a 22566 byte struct, which total to 22566 * 15 = 337566 bytes.
 SWA has 120 bytes for the int arrays so needs 120 or 240 bytes for the loop tests.
