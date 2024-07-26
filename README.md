@@ -34,25 +34,38 @@ See benchmark_data.ods or benchmark_data.xslx to view the data in a spreadsheet 
 goos: linux
 goarch: amd64
 pkg: inventory_benchmark
-cpu: AMD Ryzen 7 5800X3D 8-Core Processor
-BenchmarkOOPAllocation-16                                                          19975             67023 ns/op          344090 B/op          2 allocs/op
-BenchmarkAOSAllocation-16                                                          15957             77640 ns/op          344064 B/op          1 allocs/op
-BenchmarkSWAAllocation-16                                                          23386             47790 ns/op          344064 B/op          1 allocs/op
-BenchmarkOOPInventory_TotalWeightOfIndividualItems_RangeLoopValue-16              220039              5529 ns/op               1 B/op          0 allocs/op
-BenchmarkOOPInventory_TotalWeightOfIndividualItems_RangeLoopIndex-16            270968862                4.320 ns/op           0 B/op          0 allocs/op
-BenchmarkOOPInventory_TotalWeightOfIndividualItems-16                           160244653                7.340 ns/op           0 B/op          0 allocs/op
-BenchmarkAOS_TotalWeightOfIndividualItems_RangeLoopValue-16                        94953             11146 ns/op               3 B/op          0 allocs/op
-BenchmarkAOS_TotalWeightOfIndividualItems_RangeLoopIndex-16                     281356263                4.138 ns/op           0 B/op          0 allocs/op
-BenchmarkAOS_TotalWeightOfIndividualItems-16                                    282187761                4.069 ns/op           0 B/op          0 allocs/op
-BenchmarkSWA_TotalWeightOfIndividualItems_RangeLoopValue-16                     131188309                9.107 ns/op           0 B/op          0 allocs/op
-BenchmarkSWA_TotalWeightOfIndividualItems_RangeLoopIndex-16                     161561829                7.336 ns/op           0 B/op          0 allocs/op
-BenchmarkSWA_TotalWeightOfIndividualItems-16                                    160562037                7.508 ns/op           0 B/op          0 allocs/op
-BenchmarkOOPInventory_TotalWeightOfInventory-16                                 155808315                7.701 ns/op           0 B/op          0 allocs/op
-BenchmarkOOPInventory_TotalWeightOfInventory_ExtraCall-16                       154883451                7.763 ns/op           0 B/op          0 allocs/op
-BenchmarkAOS_TotalWeightOfInventory-16                                          158777956                7.521 ns/op           0 B/op          0 allocs/op
-BenchmarkSWA_TotalWeightOfInventory-16                                          157290012                7.722 ns/op           0 B/op          0 allocs/op
-PASS
-ok      inventory_benchmark     29.595s
+cpu: AMD Ryzen 7 5800X3D 8-Core Processor           
+                                              │     oop.txt     │                aos.txt                 │               swa.txt                │
+                                              │     sec/op      │     sec/op       vs base               │    sec/op     vs base                │
+Allocation-16                                       76.73µ ± 4%       78.60µ ± 7%       ~ (p=0.796 n=10)   44.40µ ± 26%  -42.14% (p=0.000 n=10)
+TotalWeightOfIndividualItemsRangeLoopValue-16   11106.000n ± 1%   11236.000n ± 2%       ~ (p=0.063 n=10)   7.395n ±  1%  -99.93% (p=0.000 n=10)
+TotalWeightOfIndividualItemsRangeLoopIndex-16       4.079n ± 2%       4.085n ± 2%       ~ (p=0.644 n=10)   4.079n ±  1%        ~ (p=0.896 n=10)
+TotalWeightOfIndividualItems-16                     4.048n ± 1%       4.059n ± 2%       ~ (p=0.811 n=10)   4.072n ±  1%   +0.61% (p=0.030 n=10)
+TotalWeightOfInventory-16                           7.352n ± 1%       7.330n ± 1%       ~ (p=0.280 n=10)   4.912n ±  1%  -33.19% (p=0.000 n=10)
+geomean                                             159.6n            160.7n       +0.74%                  30.59n        -80.83%
+
+                                              │    oop.txt     │                aos.txt                │                  swa.txt                  │
+                                              │      B/op      │     B/op      vs base                 │     B/op      vs base                     │
+Allocation-16                                   336.0Ki ± 0%     336.0Ki ± 0%       ~ (p=1.000 n=10)     336.0Ki ± 0%         ~ (p=1.000 n=10)
+TotalWeightOfIndividualItemsRangeLoopValue-16     3.000 ± 0%       3.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%  -100.00% (p=0.000 n=10)
+TotalWeightOfIndividualItemsRangeLoopIndex-16     0.000 ± 0%       0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%         ~ (p=1.000 n=10) ¹
+TotalWeightOfIndividualItems-16                   0.000 ± 0%       0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%         ~ (p=1.000 n=10) ¹
+TotalWeightOfInventory-16                         0.000 ± 0%       0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%         ~ (p=1.000 n=10) ¹
+geomean                                                      ²                 +0.00%                ²                 ?                       ² ³
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+³ ratios must be >0 to compute geomean
+
+                                              │   oop.txt    │               aos.txt               │               swa.txt               │
+                                              │  allocs/op   │ allocs/op   vs base                 │ allocs/op   vs base                 │
+Allocation-16                                   1.000 ± 0%     1.000 ± 0%       ~ (p=1.000 n=10) ¹   1.000 ± 0%       ~ (p=1.000 n=10) ¹
+TotalWeightOfIndividualItemsRangeLoopValue-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TotalWeightOfIndividualItemsRangeLoopIndex-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TotalWeightOfIndividualItems-16                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TotalWeightOfInventory-16                       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                    ²               +0.00%                ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean
 ```
 
 ## Conclusion
