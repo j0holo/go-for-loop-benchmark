@@ -20,6 +20,12 @@ There are three kind of benchmarks:
   - plain for loop
 - A function which sums the weight * amount of all items in an inventory
 
+## Running the benchmarks
+
+go test -run='^$' -bench=. -benchmem -count=10 ./oop/ > oop.txt
+go test -run='^$' -bench=. -benchmem -count=10 ./aos/ > aos.txt
+go test -run='^$' -bench=. -benchmem -count=10 ./swa/ > swa.txt
+
 ## Results
 
 See benchmark_data.ods or benchmark_data.xslx to view the data in a spreadsheet for a clear view of each benchmark.

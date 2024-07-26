@@ -1,0 +1,35 @@
+goos: linux
+goarch: amd64
+pkg: inventory_benchmark
+cpu: AMD Ryzen 7 5800X3D 8-Core Processor           
+                                              │     oop.txt     │                aos.txt                 │               swa.txt                │
+                                              │     sec/op      │     sec/op       vs base               │    sec/op     vs base                │
+Allocation-16                                       76.73µ ± 4%       78.60µ ± 7%       ~ (p=0.796 n=10)   44.40µ ± 26%  -42.14% (p=0.000 n=10)
+TotalWeightOfIndividualItemsRangeLoopValue-16   11106.000n ± 1%   11236.000n ± 2%       ~ (p=0.063 n=10)   7.395n ±  1%  -99.93% (p=0.000 n=10)
+TotalWeightOfIndividualItemsRangeLoopIndex-16       4.079n ± 2%       4.085n ± 2%       ~ (p=0.644 n=10)   4.079n ±  1%        ~ (p=0.896 n=10)
+TotalWeightOfIndividualItems-16                     4.048n ± 1%       4.059n ± 2%       ~ (p=0.811 n=10)   4.072n ±  1%   +0.61% (p=0.030 n=10)
+TotalWeightOfInventory-16                           7.352n ± 1%       7.330n ± 1%       ~ (p=0.280 n=10)   4.912n ±  1%  -33.19% (p=0.000 n=10)
+geomean                                             159.6n            160.7n       +0.74%                  30.59n        -80.83%
+
+                                              │    oop.txt     │                aos.txt                │                  swa.txt                  │
+                                              │      B/op      │     B/op      vs base                 │     B/op      vs base                     │
+Allocation-16                                   336.0Ki ± 0%     336.0Ki ± 0%       ~ (p=1.000 n=10)     336.0Ki ± 0%         ~ (p=1.000 n=10)
+TotalWeightOfIndividualItemsRangeLoopValue-16     3.000 ± 0%       3.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%  -100.00% (p=0.000 n=10)
+TotalWeightOfIndividualItemsRangeLoopIndex-16     0.000 ± 0%       0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%         ~ (p=1.000 n=10) ¹
+TotalWeightOfIndividualItems-16                   0.000 ± 0%       0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%         ~ (p=1.000 n=10) ¹
+TotalWeightOfInventory-16                         0.000 ± 0%       0.000 ± 0%       ~ (p=1.000 n=10) ¹     0.000 ± 0%         ~ (p=1.000 n=10) ¹
+geomean                                                      ²                 +0.00%                ²                 ?                       ² ³
+¹ all samples are equal
+² summaries must be >0 to compute geomean
+³ ratios must be >0 to compute geomean
+
+                                              │   oop.txt    │               aos.txt               │               swa.txt               │
+                                              │  allocs/op   │ allocs/op   vs base                 │ allocs/op   vs base                 │
+Allocation-16                                   1.000 ± 0%     1.000 ± 0%       ~ (p=1.000 n=10) ¹   1.000 ± 0%       ~ (p=1.000 n=10) ¹
+TotalWeightOfIndividualItemsRangeLoopValue-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TotalWeightOfIndividualItemsRangeLoopIndex-16   0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TotalWeightOfIndividualItems-16                 0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+TotalWeightOfInventory-16                       0.000 ± 0%     0.000 ± 0%       ~ (p=1.000 n=10) ¹   0.000 ± 0%       ~ (p=1.000 n=10) ¹
+geomean                                                    ²               +0.00%                ²               +0.00%                ²
+¹ all samples are equal
+² summaries must be >0 to compute geomean

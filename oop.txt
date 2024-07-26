@@ -1,0 +1,56 @@
+goos: linux
+goarch: amd64
+pkg: inventory_benchmark
+cpu: AMD Ryzen 7 5800X3D 8-Core Processor           
+BenchmarkAllocation-16                                    	   46612	     73920 ns/op	  344065 B/op	       1 allocs/op
+BenchmarkAllocation-16                                    	   15705	     77513 ns/op	  344064 B/op	       1 allocs/op
+BenchmarkAllocation-16                                    	   15338	     79953 ns/op	  344064 B/op	       1 allocs/op
+BenchmarkAllocation-16                                    	   15848	     73305 ns/op	  344064 B/op	       1 allocs/op
+BenchmarkAllocation-16                                    	   14956	     75310 ns/op	  344064 B/op	       1 allocs/op
+BenchmarkAllocation-16                                    	   15561	     77919 ns/op	  344064 B/op	       1 allocs/op
+BenchmarkAllocation-16                                    	   15901	     81908 ns/op	  344064 B/op	       1 allocs/op
+BenchmarkAllocation-16                                    	   15918	     79575 ns/op	  344064 B/op	       1 allocs/op
+BenchmarkAllocation-16                                    	   15031	     75058 ns/op	  344064 B/op	       1 allocs/op
+BenchmarkAllocation-16                                    	   15444	     75948 ns/op	  344064 B/op	       1 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopValue-16    	  107695	     11006 ns/op	       3 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopValue-16    	   94782	     11305 ns/op	       3 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopValue-16    	   95278	     11197 ns/op	       3 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopValue-16    	   94088	     11050 ns/op	       3 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopValue-16    	   94471	     11124 ns/op	       3 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopValue-16    	   94632	     10876 ns/op	       3 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopValue-16    	   95144	     11069 ns/op	       3 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopValue-16    	   95356	     11158 ns/op	       3 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopValue-16    	   95028	     11088 ns/op	       3 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopValue-16    	   95643	     11168 ns/op	       3 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopIndex-16    	295483209	         4.049 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopIndex-16    	297027607	         4.135 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopIndex-16    	284395111	         4.048 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopIndex-16    	285101580	         4.102 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopIndex-16    	288941436	         4.114 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopIndex-16    	289423592	         4.056 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopIndex-16    	288472429	         3.992 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopIndex-16    	300653388	         4.158 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopIndex-16    	298132340	         4.039 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItemsRangeLoopIndex-16    	288448753	         4.160 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItems-16                  	287311429	         4.047 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItems-16                  	293189130	         4.060 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItems-16                  	291667826	         4.039 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItems-16                  	289754828	         4.065 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItems-16                  	288414302	         4.019 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItems-16                  	285573631	         3.994 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItems-16                  	284452143	         4.003 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItems-16                  	300883412	         4.125 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItems-16                  	288581599	         4.058 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfIndividualItems-16                  	287869465	         4.049 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfInventory-16                        	161541150	         7.453 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfInventory-16                        	162192418	         7.440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfInventory-16                        	161552827	         7.357 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfInventory-16                        	162974708	         7.325 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfInventory-16                        	159827341	         7.343 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfInventory-16                        	163097797	         7.452 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfInventory-16                        	163458763	         7.351 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfInventory-16                        	164521426	         7.314 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfInventory-16                        	158747626	         7.335 ns/op	       0 B/op	       0 allocs/op
+BenchmarkTotalWeightOfInventory-16                        	163404865	         7.353 ns/op	       0 B/op	       0 allocs/op
+PASS
+ok  	inventory_benchmark/oop	85.841s
